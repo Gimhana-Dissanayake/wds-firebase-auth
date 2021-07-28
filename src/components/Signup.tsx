@@ -14,7 +14,7 @@ const Signup = () => {
     e.preventDefault();
 
     if (emailRef.current && passwordRef.current && passwordConfirmRef.current) {
-      if (passwordRef.current.value === passwordConfirmRef.current.value) {
+      if (passwordRef.current.value !== passwordConfirmRef.current.value) {
         return setError("Passwords do not match");
       }
 
@@ -49,7 +49,7 @@ const Signup = () => {
               <Form.Label>Password Confirmation</Form.Label>
               <Form.Control type="password" ref={passwordConfirmRef} required />
             </Form.Group>
-            <Button disabled={loading} type="submit" className="w-100">
+            <Button disabled={loading} type="submit" className="w-100 mt-2">
               Sign Up
             </Button>
           </Form>
